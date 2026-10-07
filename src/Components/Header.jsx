@@ -2,6 +2,9 @@ import { BsCart3 } from "react-icons/bs";
 import CartPopup from "./CartPopup";
 import { MdMenu } from "react-icons/md";
 
+import LogoImage from "/images/logo.svg";
+import AvatarImage from "/images/image-avatar.png";
+
 function Header({
   cartPopup,
   cartPopupToggle,
@@ -14,7 +17,7 @@ function Header({
       <div className="header-main-container">
         <div className="header-logo-container">
           <img
-            src="/images/logo.svg"
+            src={LogoImage}
             alt="Logo image for Sneakers.com"
             className="logo-image"
           />
@@ -30,7 +33,7 @@ function Header({
         </div>
         <div className="header-basket-container">
           <BsCart3 className="cart-icon" onClick={cartPopupToggle} />
-          <img src="/images/image-avatar.png" alt="" className="avatar-image" />
+          <img src={AvatarImage} alt="" className="avatar-image" />
         </div>
         {cartPopup && <CartPopup cart={cart} removeProduct={removeProduct} />}
       </div>
@@ -41,14 +44,14 @@ function Header({
             onClick={() => setMenuPopup(true)}
           />
           <img
-            src="/images/logo.svg"
+            src={LogoImage}
             alt="Logo image for Sneakers.com"
             className="logo-image"
           />
         </div>
         <div className="header-basket-container">
           <BsCart3 className="cart-icon" onClick={cartPopupToggle} />
-          <img src="/images/image-avatar.png" alt="" className="avatar-image" />
+          <img src={AvatarImage} alt="avatar image" className="avatar-image" />
         </div>
         {cartPopup && <CartPopup cart={cart} removeProduct={removeProduct} />}
       </div>
