@@ -1,7 +1,6 @@
 import { FaRegTrashCan } from "react-icons/fa6";
 
 function CartPopup({ cart, removeProduct }) {
-  console.log(cart);
   return (
     <div className="basket-popup">
       <div className="cart-popup-title">

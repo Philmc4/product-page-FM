@@ -23,7 +23,7 @@ function AddToCart({
           type="number"
           value={quantity}
           onChange={(e) => {
-            setQuantity(e.target.value);
+            setQuantity(Number(e.target.value));
           }}
           className="text-3-bold quantity-input"
           name="product-quantity"
@@ -38,7 +38,7 @@ function AddToCart({
       </div>
       <button
         className="add-to-cart-main-button"
-        onClick={() => addToCart(product, quantity)}
+        onClick={quantity > 0 ? () => addToCart(product) : ""}
       >
         <BsCart3 className="cart-button-icon" />
         <p className="text-3-bold text-my-grey-950">Add to cart</p>
