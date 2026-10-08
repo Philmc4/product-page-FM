@@ -22,7 +22,6 @@ function App() {
     { source: Image3, index: 2, thumbnail: ThumbnailImage3 },
     { source: Image4, index: 3, thumbnail: ThumbnailImage4 },
   ];
-  // const [quantity, setQuantity] = useState(0);
   const [cartPopup, setCartPopup] = useState(false);
   const [lightboxModal, setLightboxModal] = useState(false);
   const [menuPopup, setMenuPopup] = useState(false);
