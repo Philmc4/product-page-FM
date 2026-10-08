@@ -36,8 +36,11 @@ function App() {
     mainImage: ThumbnailImage1,
   });
 
+  // console.log(cart);
+
   const addToCart = (item) => {
-    setCart([...cart, item]);
+    if (quantity > 0) setCart([...cart, item]);
+    if (quantity === 0) return;
   };
 
   const removeProduct = (itemToRemove) => {

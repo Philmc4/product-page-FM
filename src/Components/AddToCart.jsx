@@ -45,7 +45,7 @@ function AddToCart({
         type="button"
         aria-label="Add the item to cart"
         className="add-to-cart-main-button"
-        onClick={quantity > 0 ? () => addToCart(product) : ""}
+        onClick={() => addToCart(product)}
       >
         <BsCart3 className="cart-button-icon" />
         <p className="text-3-bold text-my-grey-950">Add to cart</p>
