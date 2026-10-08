@@ -1,18 +1,13 @@
 import { IoIosArrowForward } from "react-icons/io";
 
 function NextButton({ nextImage, className }) {
-  function handleArrowRight(event) {
-    if (event.key === "ArrowRight") {
-      nextImage();
-    }
-  }
-
   return (
     <>
       <button
+        type="button"
+        aria-label="Button to move to the next image"
         className={className}
         onClick={nextImage}
-        onKeyDown={handleArrowRight}
       >
         <IoIosArrowForward className="image-navigation-icon" />
       </button>

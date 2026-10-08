@@ -14,6 +14,8 @@ function AddToCart({
     <div className="add-to-cart-main-container">
       <div className="quantity-container">
         <button
+          type="button"
+          aria-label="Decrease the quantity"
           onClick={() => decreaseQuantity(quantity)}
           className="product-minus"
         >
@@ -30,6 +32,8 @@ function AddToCart({
           id=""
         ></input>
         <button
+          type="button"
+          aria-label="Increase the quantity"
           onClick={() => increaseQuantity(quantity)}
           className="product-plus"
         >
@@ -37,6 +41,8 @@ function AddToCart({
         </button>
       </div>
       <button
+        type="button"
+        aria-label="Add the item to cart"
         className="add-to-cart-main-button"
         onClick={quantity > 0 ? () => addToCart(product) : ""}
       >

@@ -6,7 +6,6 @@ function CartPopup({ cart, removeProduct }) {
       <div className="cart-popup-title">
         <p className="text-3-bold text-my-grey-950 pl-3">Cart</p>
       </div>
-      {/* <div className="cart-contents"> */}
       {cart.length > 0 ? (
         <div className="cart-item-container">
           {cart.map((item, index) => (
@@ -32,13 +31,20 @@ function CartPopup({ cart, removeProduct }) {
                   </p>
                 </div>
               </div>
-              <FaRegTrashCan
-                className="size-4 cursor-pointer text-my-grey-300"
+              <button
+                type="button"
+                aria-label="Remove an item from the cart"
                 onClick={() => removeProduct(item)}
-              />
+              >
+                <FaRegTrashCan className="size-4 cursor-pointer text-my-grey-300" />
+              </button>
             </div>
           ))}
-          <button className="checkout-button text-3-bold text-my-grey-950">
+          <button
+            type="button"
+            aria-label="Checkout button"
+            className="checkout-button text-3-bold text-my-grey-950"
+          >
             Checkout
           </button>
         </div>
@@ -47,7 +53,6 @@ function CartPopup({ cart, removeProduct }) {
           <p className="text-3-bold text-my-grey-500">Your cart is empty</p>
         </div>
       )}
-      {/* </div> */}
     </div>
   );
 }

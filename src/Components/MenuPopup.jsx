@@ -4,10 +4,13 @@ function MenuPopup({ setMenuPopup }) {
   return (
     <div className="menu-popup-main-container">
       <div className="popup-menu-main-container">
-        <IoClose
-          className="menu-popup-close-icon"
+        <button
+          type="button"
+          aria-label="Close the popup menu"
           onClick={() => setMenuPopup(false)}
-        />
+        >
+          <IoClose className="menu-popup-close-icon" />
+        </button>
         <header>
           <ul>
             <li>Collections</li>

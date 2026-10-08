@@ -32,17 +32,27 @@ function Header({
           </header>
         </div>
         <div className="header-basket-container">
-          <BsCart3 className="cart-icon" onClick={cartPopupToggle} />
+          <button
+            type="button"
+            aria-label="Open and close the cart popup"
+            onClick={cartPopupToggle}
+          >
+            <BsCart3 className="cart-icon" />
+          </button>
           <img src={AvatarImage} alt="" className="avatar-image" />
         </div>
         {cartPopup && <CartPopup cart={cart} removeProduct={removeProduct} />}
       </div>
       <div className="smaller-screen-header-main-container">
         <div className="header-logo-container">
-          <MdMenu
-            className="menu-popup-icon"
+          <button
+            type="button"
+            aria-label="Open the mobile menu"
             onClick={() => setMenuPopup(true)}
-          />
+          >
+            <MdMenu className="menu-popup-icon" />
+          </button>
+
           <img
             src={LogoImage}
             alt="Logo image for Sneakers.com"
@@ -50,7 +60,14 @@ function Header({
           />
         </div>
         <div className="header-basket-container">
-          <BsCart3 className="cart-icon" onClick={cartPopupToggle} />
+          <button
+            type="button"
+            aria-label="Open and close the cart popup"
+            onClick={cartPopupToggle}
+          >
+            <BsCart3 className="cart-icon" />
+          </button>
+
           <img src={AvatarImage} alt="avatar image" className="avatar-image" />
         </div>
         {cartPopup && <CartPopup cart={cart} removeProduct={removeProduct} />}

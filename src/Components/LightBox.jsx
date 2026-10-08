@@ -10,21 +10,17 @@ function LightBox({
   nextImage,
   lastImage,
 }) {
-  function handleClose(event) {
-    if (event.key === "Escape") {
-      lightboxModalOpen();
-    }
-  }
-
   return (
     <div className="lightbox-main-container">
       <div className="lightbox-content">
         <div className="lightbox-icon-container">
-          <IoClose
-            className="lightbox-close-icon"
+          <button
+            type="button"
+            aria-label="Close the image gallery"
             onClick={lightboxModalOpen}
-            onKeyDown={handleClose}
-          />
+          >
+            <IoClose className="lightbox-close-icon" />
+          </button>
         </div>
         <LightboxImageGallery
           productImages={productImages}

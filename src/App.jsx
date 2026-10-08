@@ -1,5 +1,5 @@
 import "./index.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Components/Header";
 import ProductContent from "./Components/ProductContent";
 import ImageGallery from "./Components/ImageGallery";
@@ -86,11 +86,15 @@ function App() {
     }
   }
 
-  // const handleArrowRight = (event) => {
-  //   if (event.key == "ArrowRight") {
-  //     nextImage();
-  //   }
-  // };
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") lastImage();
+      if (e.key === "Escape" && lightboxModal) setLightboxModal(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
 
   return (
     <>
