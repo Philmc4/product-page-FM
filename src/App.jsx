@@ -36,11 +36,11 @@ function App() {
     mainImage: ThumbnailImage1,
   });
 
-  // console.log(cart);
+  console.log(cart);
 
   const addToCart = (item) => {
-    if (product.quantity > 0) setCart([...cart, item]);
     if (product.quantity === 0) return;
+    if (product.quantity > 0) setCart([...cart, item]);
   };
 
   const removeProduct = (itemToRemove) => {
@@ -53,13 +53,11 @@ function App() {
 
   const increaseQuantity = (number) => {
     if (number < 10) {
-      // setQuantity(number + 1);
       setProduct({ ...product, quantity: number + 1 });
     }
   };
   const decreaseQuantity = (number) => {
     if (number > 0) {
-      // setQuantity(number - 1);
       setProduct({ ...product, quantity: number - 1 });
     }
   };
