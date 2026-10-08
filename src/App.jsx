@@ -36,8 +36,6 @@ function App() {
     mainImage: ThumbnailImage1,
   });
 
-  console.log(cart);
-
   const addToCart = (item) => {
     if (product.quantity === 0) return;
     if (product.quantity > 0) setCart([...cart, item]);
