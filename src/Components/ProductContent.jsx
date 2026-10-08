@@ -1,13 +1,12 @@
 import AddToCart from "./AddToCart";
 
 function ProductContent({
-  quantity,
   increaseQuantity,
   decreaseQuantity,
-  setQuantity,
   addToCart,
   product,
   setProduct,
+  productQuantity,
 }) {
   return (
     <div className="main-product-content">
@@ -49,13 +48,12 @@ function ProductContent({
         </p>
       </div>
       <AddToCart
-        setQuantity={setQuantity}
-        quantity={quantity}
         increaseQuantity={increaseQuantity}
         decreaseQuantity={decreaseQuantity}
         addToCart={addToCart}
         product={product}
         setProduct={setProduct}
+        productQuantity={productQuantity}
       />
     </div>
   );

@@ -3,12 +3,11 @@ import { FaPlus } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 
 function AddToCart({
-  quantity,
   increaseQuantity,
   decreaseQuantity,
-  setQuantity,
   addToCart,
   product,
+  productQuantity,
 }) {
   return (
     <div className="add-to-cart-main-container">
@@ -16,7 +15,7 @@ function AddToCart({
         <button
           type="button"
           aria-label="Decrease the quantity"
-          onClick={() => decreaseQuantity(quantity)}
+          onClick={() => decreaseQuantity(product.quantity)}
           className="product-minus"
         >
           <FaMinus className="cart-quantity-icon" />
@@ -24,9 +23,9 @@ function AddToCart({
         <input
           aria-label="Quantity of product to add to cart"
           type="number"
-          value={quantity}
+          value={product.quantity}
           onChange={(e) => {
-            setQuantity(Number(e.target.value));
+            productQuantity(Number(e.target.value));
           }}
           className="text-3-bold quantity-input"
           name="product-quantity"
@@ -35,7 +34,7 @@ function AddToCart({
         <button
           type="button"
           aria-label="Increase the quantity"
-          onClick={() => increaseQuantity(quantity)}
+          onClick={() => increaseQuantity(product.quantity)}
           className="product-plus"
         >
           <FaPlus className="cart-quantity-icon" />

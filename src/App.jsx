@@ -1,9 +1,9 @@
 import "./index.css";
 import { useEffect, useState } from "react";
-import Header from "./Components/Header";
-import ProductContent from "./Components/ProductContent";
-import ImageGallery from "./Components/ImageGallery";
-import LightBox from "./Components/LightBox";
+import Header from "./components/Header";
+import ProductContent from "./components/ProductContent";
+import ImageGallery from "./components/ImageGallery";
+import LightBox from "./components/LightBox";
 
 import Image1 from "/images/image-product-1.jpg";
 import Image2 from "/images/image-product-2.jpg";
@@ -13,7 +13,7 @@ import ThumbnailImage1 from "/images/image-product-1-thumbnail.jpg";
 import ThumbnailImage2 from "/images/image-product-2-thumbnail.jpg";
 import ThumbnailImage3 from "/images/image-product-3-thumbnail.jpg";
 import ThumbnailImage4 from "/images/image-product-4-thumbnail.jpg";
-import MenuPopup from "./Components/MenuPopup";
+import MenuPopup from "./components/MenuPopup";
 
 function App() {
   const productImages = [
@@ -22,7 +22,7 @@ function App() {
     { source: Image3, index: 2, thumbnail: ThumbnailImage3 },
     { source: Image4, index: 3, thumbnail: ThumbnailImage4 },
   ];
-  const [quantity, setQuantity] = useState(0);
+  // const [quantity, setQuantity] = useState(0);
   const [cartPopup, setCartPopup] = useState(false);
   const [lightboxModal, setLightboxModal] = useState(false);
   const [menuPopup, setMenuPopup] = useState(false);
@@ -32,30 +32,34 @@ function App() {
     name: "Fall Limited Edition Sneakers",
     price: 250.0,
     discount: 50,
-    quantity: 0,
+    quantity: 1,
     mainImage: ThumbnailImage1,
   });
 
   // console.log(cart);
 
   const addToCart = (item) => {
-    if (quantity > 0) setCart([...cart, item]);
-    if (quantity === 0) return;
+    if (product.quantity > 0) setCart([...cart, item]);
+    if (product.quantity === 0) return;
   };
 
   const removeProduct = (itemToRemove) => {
     setCart(cart.filter((items) => items !== itemToRemove));
   };
 
+  const productQuantity = (number) => {
+    setProduct({ ...product, quantity: number + 1 });
+  };
+
   const increaseQuantity = (number) => {
     if (number < 10) {
-      setQuantity(number + 1);
+      // setQuantity(number + 1);
       setProduct({ ...product, quantity: number + 1 });
     }
   };
   const decreaseQuantity = (number) => {
     if (number > 0) {
-      setQuantity(number - 1);
+      // setQuantity(number - 1);
       setProduct({ ...product, quantity: number - 1 });
     }
   };
@@ -133,11 +137,10 @@ function App() {
         <ProductContent
           product={product}
           setProduct={setProduct}
-          setQuantity={setQuantity}
-          quantity={quantity}
           increaseQuantity={increaseQuantity}
           decreaseQuantity={decreaseQuantity}
           addToCart={addToCart}
+          productQuantity={productQuantity}
         />
       </main>
     </>

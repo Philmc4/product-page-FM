@@ -1,5 +1,5 @@
 import { IoClose } from "react-icons/io5";
-import LightboxImageGallery from "./LightboxImageGallery";
+import LightboxImageGallery from "./LightBoxImageGallery";
 import Carousel from "./Carousel";
 
 function LightBox({
