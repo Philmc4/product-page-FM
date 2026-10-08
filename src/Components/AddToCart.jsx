@@ -22,6 +22,7 @@ function AddToCart({
           <FaMinus className="cart-quantity-icon" />
         </button>
         <input
+          aria-label="Quantity of product to add to cart"
           type="number"
           value={quantity}
           onChange={(e) => {
@@ -29,7 +30,7 @@ function AddToCart({
           }}
           className="text-3-bold quantity-input"
           name="product-quantity"
-          id=""
+          id="product-quantity"
         ></input>
         <button
           type="button"

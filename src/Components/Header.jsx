@@ -14,22 +14,32 @@ function Header({
 }) {
   return (
     <>
-      <div className="header-main-container">
+      <header className="header-main-container">
         <div className="header-logo-container">
           <img
             src={LogoImage}
             alt="Logo image for Sneakers.com"
             className="logo-image"
           />
-          <header>
+          <nav>
             <ul>
-              <li>Collections</li>
-              <li>Men</li>
-              <li>Women</li>
-              <li>About</li>
-              <li>Contact</li>
+              <li>
+                <a href="#">Collections</a>
+              </li>
+              <li>
+                <a href="#">Men</a>
+              </li>
+              <li>
+                <a href="#">Women</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
             </ul>
-          </header>
+          </nav>
         </div>
         <div className="header-basket-container">
           <button
@@ -42,7 +52,7 @@ function Header({
           <img src={AvatarImage} alt="" className="avatar-image" />
         </div>
         {cartPopup && <CartPopup cart={cart} removeProduct={removeProduct} />}
-      </div>
+      </header>
       <div className="smaller-screen-header-main-container">
         <div className="header-logo-container">
           <button

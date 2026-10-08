@@ -2,7 +2,7 @@ import { IoClose } from "react-icons/io5";
 
 function MenuPopup({ setMenuPopup }) {
   return (
-    <div className="menu-popup-main-container">
+    <header className="menu-popup-main-container">
       <div className="popup-menu-main-container">
         <button
           type="button"
@@ -11,7 +11,7 @@ function MenuPopup({ setMenuPopup }) {
         >
           <IoClose className="menu-popup-close-icon" />
         </button>
-        <header>
+        <nav>
           <ul>
             <li>Collections</li>
             <li>Men</li>
@@ -19,9 +19,9 @@ function MenuPopup({ setMenuPopup }) {
             <li>About</li>
             <li>Contact</li>
           </ul>
-        </header>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 }
 

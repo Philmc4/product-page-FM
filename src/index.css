@@ -160,6 +160,10 @@ li {
   letter-spacing: 0px;
   cursor: pointer;
 }
+li:hover,
+li:active {
+  color: var(--my-orange-500);
+}
 
 .logo-image {
   height: 20px;
@@ -784,5 +788,6 @@ input[type="number"] {
   .main-product-image {
     border-radius: 0px;
     height: 300px;
+    width: 100%;
   }
 }

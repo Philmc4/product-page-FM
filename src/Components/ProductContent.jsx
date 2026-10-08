@@ -23,7 +23,10 @@ function ProductContent({
       <div className="price-main-container">
         <div className="price-totals">
           <p className="text-2">
-            ${Number((product.price * product.discount) / 100).toFixed(2)}
+            $
+            {Number((product.price * (100 - product.discount)) / 100).toFixed(
+              2,
+            )}
           </p>
           <p className="text-3-bold original-price">
             ${product.price.toFixed(2)}
@@ -34,7 +37,10 @@ function ProductContent({
       <div className="mobile-price-main-container">
         <div className="price-totals">
           <p className="text-2">
-            ${Number((product.price * product.discount) / 100).toFixed(2)}
+            $
+            {Number((product.price * (100 - product.discount)) / 100).toFixed(
+              2,
+            )}
           </p>
           <p className="text-3-bold discount-percentage">{product.discount}%</p>
         </div>

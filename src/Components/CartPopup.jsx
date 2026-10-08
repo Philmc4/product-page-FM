@@ -19,13 +19,16 @@ function CartPopup({ cart, removeProduct }) {
                 <p className="text-4 text-my-grey-500">{item.name}</p>
                 <div className="cart-item-quantity">
                   <p className="text-4 text-my-grey-500">
-                    ${Number((item.price * item.discount) / 100).toFixed(2)} x{" "}
-                    {item.quantity}
+                    $
+                    {Number((item.price * (100 - item.discount)) / 100).toFixed(
+                      2,
+                    )}{" "}
+                    x {item.quantity}
                   </p>
                   <p className="text-3-bold text-my-grey-950">
                     $
                     {Number(
-                      Number((item.price * item.discount) / 100) *
+                      Number((item.price * (100 - item.discount)) / 100) *
                         item.quantity,
                     ).toFixed(2)}
                   </p>
